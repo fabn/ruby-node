@@ -25,3 +25,12 @@ RUN apt-get install -y --no-install-recommends \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Update bundler
 RUN gem install bundler -v=${BUNDLER_VERSION}
+# Phantomjs binary file
+ENV PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
+# Install phantomjs and make it available in path
+RUN curl -L -O https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2 && \
+    tar xvjf $PHANTOM_JS.tar.bz2 && \
+    mv $PHANTOM_JS /usr/local/share && \
+    ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin && \
+    mkdir -p /root/.phantomjs/2.1.1/x86_64-linux/bin && \
+    ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /root/.phantomjs/2.1.1/x86_64-linux/bin/phantomjs
