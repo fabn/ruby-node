@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get -y install apt-transport-https curl
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 # Setup node
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 # Update package cache
 RUN apt-get update -qq
 # Install apt dependencies
