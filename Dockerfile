@@ -1,16 +1,16 @@
-FROM ruby:2.3.1
+FROM ruby:2.6.2
 MAINTAINER Fabio Napoleoni <f.napoleoni@gmail.com>
 # Bundler updated version
-ENV BUNDLER_VERSION 1.16.1
+ENV BUNDLER_VERSION 1.17.2
 # Debian repository versions
-ENV YARN_VERSION=1.7.0-1
+ENV YARN_VERSION=1.15.2-1
 # Update package cache and install https transport
 RUN apt-get update -qq && apt-get -y install apt-transport-https curl
 # Packages repositories for yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 # Setup node
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 # Update package cache
 RUN apt-get update -qq
 # Install apt dependencies
