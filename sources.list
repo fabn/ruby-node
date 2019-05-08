@@ -1,0 +1,4 @@
+# This file will replace old URLs contained in base image
+# see https://superuser.com/a/1423685/66356
+deb http://archive.debian.org/debian/ jessie main
+deb http://security.debian.org jessie/updates main
