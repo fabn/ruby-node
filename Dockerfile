@@ -3,7 +3,7 @@ MAINTAINER Fabio Napoleoni <f.napoleoni@gmail.com>
 # Bundler updated version
 ENV BUNDLER_VERSION 1.17.2
 # Debian repository versions
-ENV YARN_VERSION=1.19-1
+ENV YARN_VERSION=1.22.4-1
 # Update package cache and install https transport
 RUN apt-get update -qq && apt-get -y install apt-transport-https curl
 # Packages repositories for yarn
