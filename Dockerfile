@@ -22,7 +22,7 @@ RUN apt-get install -y --no-install-recommends \
   unzip \
   zlib1g-dev \
   libxslt-dev \
-  mysql-client
+  default-mysql-client
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Update bundler
