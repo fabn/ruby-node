@@ -1,4 +1,4 @@
-FROM ruby:2.6.2
+FROM ruby:2.6.6
 MAINTAINER Fabio Napoleoni <f.napoleoni@gmail.com>
 # Bundler updated version
 ENV BUNDLER_VERSION 1.17.2
